@@ -21,10 +21,16 @@ function change_size(e) {
   document.getElementById("text").style.fontSize = `${(e.value / 100) * 3.75}rem`;
 }
 async function export_image() {
-  canvas = await html2canvas(document.getElementById("result"));
+  //   canvas = await html2canvas(document.getElementById("result"));
   const a = document.createElement("a");
-  a.download = `${document.getElementById("text").innerText}.png`;
-  a.crossorigin = "anonymous";
-  a.href = canvas.toDataURL("image/png");
-  a.click();
+  //   a.download = `${document.getElementById("text").innerText}.png`;
+  //   a.crossorigin = "anonymous";
+  //   a.href = canvas.toDataURL("image/png");
+  //   a.click();
+  domtoimage.toPng(document.getElementById("result")).then(function (dataUrl) {
+    a.download = `${document.getElementById("text").innerText}.png`;
+    a.crossorigin = "anonymous";
+    a.href = dataUrl;
+    a.click();
+  });
 }
