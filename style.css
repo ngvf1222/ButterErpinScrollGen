@@ -1,0 +1,29 @@
+@font-face {
+  font-family: "OneMobliePop";
+  src: url("./ONE\ Mobile\ POP.ttf") format("truetype");
+}
+/* html {
+  width: 100%;
+  height: 100%;
+}
+body {
+  margin: 0;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body::after {
+  opacity: 30%;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  content: "";
+  background-image: url("./Stage_fairy_a.png");
+  z-index: -100;
+}
+.container {
+  font-family: ONE MOBILE POP;
+} */

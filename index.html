@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html class="inset-full">
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+  </head>
+  <body
+    class="inset-full flex flex-col items-center"
+    style="
+      background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url('Stage_fairy_a.png');
+    "
+  >
+    <div class="container flex flex-col items-center flex-grow-0 md:w-11/12 w-full">
+      <p class="font-['OneMobliePop'] lg:text-6xl md:text-7xl text-8xl">트릭컬 두루마리 짤 생성기</h1>
+      <div class="flex lg:flex-row flex-col items-center justify-center">
+      <div class="m-10 w-3/10 relative" id='result'>
+        <img src="475731059_17856458862362958_5142921208880804035_n.jpg" class="z-10" id="background">
+        <div class="absolute inset-y-58/100 inset-x-59/100 w-[20%] h-[50%] rotate-[46.5deg] flex flex-row items-center justify-center">
+          <p id='text' class="w-full overflow-clip text-[#fcd85f] [text-shadow:_2px_0px_#a41b1b,_-2px_0px_#a41b1b,_0px_2px_#a41b1b,_0px_-2px_#a41b1b] font-['OneMobliePop'] text-center text-6xl">예시</p>
+        </div>
+      </div>
+      <div class="flex flex-col items-center justify-center w-1/2">
+      <p class="font-['OneMobliePop'] lg:text-4xl md:text-5xl text-6xl">이미지 선택</p>
+      <div class="flex flex-row justify-center">
+        <img src="475731059_17856458862362958_5142921208880804035_n.jpg" class="border border-2 m-2 hover:scale-101 w-2/5 h-2/5" onclick="change_image(this)">
+        <img src="475638249_17856458853362958_1850110772365870625_n.jpg" class="hover:scale-101 w-2/5 h-2/5 m-2" onclick="change_image(this)">
+      </div>
+      <p class="font-['OneMobliePop'] lg:text-4xl md:text-5xl text-6xl">텍스트 편집</p>
+      <input type="text" class="bg-white w-100 h-10 text-2 text-center" value="예시" oninput="change_text(this)" id="text_inp">
+      <p class="font-['OneMobliePop'] lg:text-4xl md:text-5xl text-6xl mt-3">텍스트 크기 조절</p>
+      <input type="range" class="w-100" value=100 oninput="change_size(this)">
+      <p class="font-['OneMobliePop'] lg:text-4xl md:text-5xl text-6xl mt-3">세로쓰기 모드</p>
+      <input type='checkbox' checked class='w-10 h-10' id="StrictColWrite" onchange="change_text(document.getElementById('text_inp'))">
+      <button class="bg-blue-600 mt-7 p-3 rounded-lg" onclick="export_image()"><p class="font-['OneMobliePop'] lg:text-4xl md:text-5xl text-6xl">다운로드</p></button>
+    </div>
+      <script src="script.js"></script>
+    </div>
+  </div>
+  </body>
+</html>
