@@ -3,7 +3,7 @@ const addResourcesToCache = async (resources) => {
   const cache = await caches.open("trickcal-rolls-cache");
   await cache.addAll(resources);
 };
-// ver 2
+version = 2;
 self.addEventListener("install", (event) => {
   event.waitUntil(
     addResourcesToCache([
