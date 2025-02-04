@@ -1,0 +1,16 @@
+{
+  "name": "트릭컬 두루마리 짤 생성기",
+  "short_name": "두루마리 짤 생성기",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#fff",
+  "description": "Real time chat application",
+  "icons": [
+    {
+      "src": "475731059_17856458862362958_5142921208880804035_ncopy.jpg",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
