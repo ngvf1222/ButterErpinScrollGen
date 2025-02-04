@@ -1,9 +1,9 @@
+VERSION = 2;
 const addResourcesToCache = async (resources) => {
   // 오프라인 데이터 저장을 위해 Cache Storage 활용
-  const cache = await caches.open("trickcal-rolls-cache");
+  const cache = await caches.open(`trickcal-rolls-cache-${VERSION}`);
   await cache.addAll(resources);
 };
-version = 2;
 self.addEventListener("install", (event) => {
   event.waitUntil(
     addResourcesToCache([
@@ -38,8 +38,15 @@ self.addEventListener("install", (event) => {
   // 서비스 워커가 즉시 activate 되도록 강제
   self.skipWaiting();
 });
+const deleteOldCaches = async () => {
+  const cacheKeepList = [`trickcal-rolls-cache-${VERSION}`];
+  const keyList = await caches.keys();
+  const cachesToDelete = keyList.filter((key) => !cacheKeepList.includes(key));
+  await Promise.all(cachesToDelete.map(async (cache) => await caches.delete(cache)));
+};
 
 self.addEventListener("activate", (event) => {
+  event.waitUntil(deleteOldCaches());
   // 새로 activate 된 서비스 워커가 즉시 모든 페이지를 제어하도록 강제
   event.waitUntil(clients.claim());
 });
